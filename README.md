@@ -5,7 +5,7 @@ This repository consists of smart contracts required for TotemFi Multi-asset DAp
 The flow charts provided below are generated with mermaid.js package and can be used to understand the flows of the contracts:
 
 ### Admin States
-![Admin States](https://github.com/TotemFi/totem-contracts-v2/blob/feature/TOT-754/add-mermaidjs-charts-to-readme/graphs/adminStates.png)
+![Admin States](https://github.com/TotemFi/totem-contracts-v2/raw/main/graphs/adminStates.png)
 
 ### mermaidjs code to generate this chart:
 ```mermaid
