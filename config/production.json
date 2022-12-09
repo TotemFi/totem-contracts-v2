@@ -1,0 +1,39 @@
+{
+  "totmAddress":"0x6ff1bfa14a57594a5874b37ff6ac5efbd9f9599a",
+
+  "superAdmin": "0x0",
+
+  "swapRouterAddress":"0x10ED43C718714eb63d5aA57B78B54704E256024E",
+
+  "contracts":{
+
+    "oracleAddresses": {
+      "btcTOusd": "0x264990fbd0A4796A3E3d8E37C4d5F87a3aCa5Ebf",
+      "ethTOusd": "0x9ef1B8c0E4F7dc8bF5719Ea496883DC6401d5b2e",
+      "bnbTOusd": "0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE",
+      "solTousd": "0x0E8a53DD9c13589df6382F13dA6B3Ec8F919B323",
+      "adaTousd": "0xa767f745331D267c7751297D982b050c93985627",
+      "xrpTousd": "0x93A67D414896A280bF8FFB3b389fE3686E014fda",
+      "dotTousd": "0xC333eb0086309a16aa7c8308DfD32c8BBA0a2592",
+      "dogeTouse": "0x3AB0A0d137D4F946fBB19eecc6e92E64660231C8",
+      "ltcTousd": "0x74E72F37A8c415c8f1a98Ed42E78Ff997435791D",
+      "uniTousd": "0xb57f259E7C24e56a1dA00F66b55A5640d9f9E7e4",
+      "maticTousd": "0x7CA57b0cA6367191c94C8914d7Df09A57655905f",
+      "linkTousd": "0xca236E327F629f9Fc2c30A4E95775EbF0B89fac8"
+    },
+
+    "wrappedTokenAddresses": {
+      "btc-b": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
+      "eth-b": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "wbnb": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "ada-b": "0x3ee2200efb3400fabb9aacf31297cbdd1d435d47",
+      "wdoge": "0x35a532d376ffd9a705d0bb319532837337a398e7"
+    },
+
+    "usdAddresses": {
+      "busd": "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+      "usdc": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+    }
+
+  }
+}

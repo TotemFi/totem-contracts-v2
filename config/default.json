@@ -1,0 +1,37 @@
+
+{
+
+  "totemAddress":"0xf2cf56fBE1Ae8E40f0e0D8672305c3bB115625A2",
+   
+  "superAdmin": "0x0",
+
+  "swapRouterAddress":"0x0",
+
+  "contracts":{
+
+    "oracleAddresses": {
+      "btcTOusd": "0x5741306c21795FdCBb9b265Ea0255F499DFe515C",
+      "ethTOusd": "0x143db3CEEfbdfe5631aDD3E50f7614B6ba708BA7",
+      "bnbTOusd": "0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526",
+      "adaTousd": "0x5e66a1775BbC249b5D51C13d29245522582E671C",
+      "xrpTousd": "0x4046332373C24Aed1dC8bAd489A04E187833B28d",
+      "dotTousd": "0xEA8731FD0685DB8AeAde9EcAE90C4fdf1d8164ed",
+      "dogeTouse": "0x963D5e7f285Cc84ed566C486c3c1bC911291be38",
+      "ltcTousd": "0x9Dcf949BCA2F4A8a62350E0065d18902eE87Dca3",
+      "uniTousd": "0xb57f259E7C24e56a1dA00F66b55A5640d9f9E7e4",
+      "maticTousd": "0x957Eb0316f02ba4a9De3D308742eefd44a3c1719",
+      "linkTousd": "0x1B329402Cb1825C6F30A0d92aB9E2862BE47333f"
+    },
+
+    "wrappedTokenAddresses": {
+      "btcb": "0x6ce8dA28E2f864420840cF74474eFf5fD80E65B8",
+      "ethb": "0x8BaBbB98678facC7342735486C851ABD7A0d17Ca",
+      "wbnb": "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd"
+    },
+
+    "usdAddresses": {
+      "busd": "0x78867bbeef44f2326bf8ddd1941a4439382ef2a7"
+    }
+
+  }
+}

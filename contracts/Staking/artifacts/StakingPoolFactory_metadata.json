@@ -1,0 +1,614 @@
+{
+	"compiler": {
+		"version": "0.8.0+commit.c7dfd78e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract ITotemToken",
+						"name": "_totemToken",
+						"type": "address"
+					},
+					{
+						"internalType": "contract IRewardManager",
+						"name": "_rewardManager",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_swapRouter",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_usdToken",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_stakingPoolImplementation",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_superAdmin",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "NewStakingPoolImplemnetationWasSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [],
+				"name": "NewSuperAdminWasSet",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "pool",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "wrappedTokenSymbol",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "poolType",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[12]",
+						"name": "variables",
+						"type": "uint256[12]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[8]",
+						"name": "ranks",
+						"type": "uint256[8]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[8]",
+						"name": "percentages",
+						"type": "uint256[8]"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "isEnhancedEnabled",
+						"type": "bool"
+					}
+				],
+				"name": "PoolCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "PoolCreatorAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "PoolCreatorRemoved",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "addPoolCreator",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_oracleContract",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_wrappedTokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_wrappedTokenSymbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_poolType",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256[12]",
+						"name": "_variables",
+						"type": "uint256[12]"
+					},
+					{
+						"internalType": "uint256[8]",
+						"name": "_ranks",
+						"type": "uint256[8]"
+					},
+					{
+						"internalType": "uint256[8]",
+						"name": "_percentages",
+						"type": "uint256[8]"
+					},
+					{
+						"internalType": "bool",
+						"name": "isEnhancedEnabled",
+						"type": "bool"
+					}
+				],
+				"name": "createPoolProxy",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "isPoolCreator",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minimumStakeAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renouncePoolCreator",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rewardManager",
+				"outputs": [
+					{
+						"internalType": "contract IRewardManager",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "newStakingPoolTaxRate",
+						"type": "uint256"
+					}
+				],
+				"name": "setDefaultTaxRate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_ImpAdr",
+						"type": "address"
+					}
+				],
+				"name": "setNewStakingPoolImplementationAdr",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_superAdmin",
+						"type": "address"
+					}
+				],
+				"name": "setNewSuperAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_swapRouter",
+						"type": "address"
+					}
+				],
+				"name": "setSwapRouter",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingPoolImplementationAdr",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "stakingPoolTaxRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "superAdmin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "swapRouter",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totemToken",
+				"outputs": [
+					{
+						"internalType": "contract ITotemToken",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "usdToken",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"PoolCreated(address,string,string,uint256[12],uint256[8],uint256[8],bool)": {
+					"params": {
+						"variables": "The StakingPoolProxy is created with these specs: variables[0] = launchDate variables[1] = maturityTime variables[2] = lockTime variables[3] = sizeAllocation variables[4] = stakeApr variables[5] = prizeAmount variables[6] = usdPrizeAmount variables[7] = potentialCollabReward variables[8] = collaborativeRange variables[9] = stakingPoolTaxRate variables[10] = minimumStakeAmount variables[11] = oracleDeciamls"
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"createPoolProxy(address,address,string,string,uint256[12],uint256[8],uint256[8],bool)": {
+					"params": {
+						"_variables": "The StakingPoolProxy is created with these specs: variables[0] = launchDate variables[1] = maturityTime variables[2] = lockTime variables[3] = sizeAllocation variables[4] = stakeApr variables[5] = prizeAmount variables[6] = usdPrizeAmount variables[7] = potentialCollabReward variables[8] = collaborativeRange variables[9] = stakingPoolTaxRate variables[10] = minimumStakeAmount variables[11] = oracleDeciamls"
+					}
+				},
+				"setNewStakingPoolImplementationAdr(address)": {
+					"params": {
+						"_ImpAdr": "address of the new StakingPoolImplementation contract."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"createPoolProxy(address,address,string,string,uint256[12],uint256[8],uint256[8],bool)": {
+					"notice": "creates a StakingPoolProxy for the  provided stakingPoolImplementationAdr and initializes it so that the pool is ready to be used."
+				},
+				"setNewStakingPoolImplementationAdr(address)": {
+					"notice": "This function is called whenever we want to use a new StakingPoolImplementation to create our proxies for."
+				},
+				"setNewSuperAdmin(address)": {
+					"notice": "Changes superAdmin's address so that new StakingPoolProxies have this new superAdmin"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Staking/StakingPoolFactory.sol": "StakingPoolFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0xe6f5ac8c47f3b9b6135051efb9216f9ba5b312a6ecc20209b4f66a780443c328",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ded4aa77b7b8f222a2d992eb95b03592be3250b826b6a38a4c790d2dec8b0d47",
+				"dweb:/ipfs/QmNUKpTKXWsBBNMyzZuYvEZ2pUhZ2zEhQuyvxYZpTwo4eT"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol": {
+			"keccak256": "0x35b09b69aca3bc2633da8f47382a81ecf367efe57167a2114f60f9ec81988afa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4dd39ae44599da9e6b59035de3cddcfaa8d7b2a45f1c887adf5a1e38315cf6cd",
+				"dweb:/ipfs/QmcFVkc7m3MzxoiCWCb2yZuezqW7eQTEvnScNALXhdsyJu"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0x8b2abd85d0ece7e866e100e9d47ca9cbec93c87cf71a8d267b2b93eb81f7d5e9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fe9fa1beb63e4a09637701f783982ba80380d630d600c9cafe26b68bf58be1b2",
+				"dweb:/ipfs/QmRA3GXhTWys88joD9x8xYhdjzvGwmDGLMMzGw3LxbSEge"
+			]
+		},
+		"@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0x062b5a0f7cc6b0528fa350033759f3a15ba42afb57423d7c593753860f2c82e0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3c8b4ec819fc9648ef5ae6b8edc474b2a631389fa73add4c4545e1918abe034",
+				"dweb:/ipfs/Qmc8GzvTtCxR3mg3QuLRzycSMfsSjjZPyPALmLBjMxSGv6"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x027b891937d20ccf213fdb9c31531574256de774bda99d3a70ecef6e1913ed2a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://087318b21c528119f649899f5b5580566dd8d7b0303d4904bd0e8580c3545f14",
+				"dweb:/ipfs/Qmbn5Mj7aUn8hJuQ8VrQjjEXRsXyJKykgnjR9p4C3nfLtL"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x90565a39ae45c80f0468dc96c7b20d0afc3055f344c8203a0c9258239f350b9f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://26e8b38a7ac8e7b4463af00cf7fff1bf48ae9875765bf4f7751e100124d0bc8c",
+				"dweb:/ipfs/QmWcsmkVr24xmmjfnBQZoemFniXjj3vwT78Cz6uqZW1Hux"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x8666f020bd8fc9dc14f07e2ebc52b5f236ab4cdde7c77679b08cb2f94730043b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://163776cbf565c722232393aa2d62cbe8a2ffb5805986abf4906c00e1e07450a6",
+				"dweb:/ipfs/QmPZoN9T3cb6o8bGhjBPZcz7im8T8DWhpr3tjLwhJJHx9N"
+			]
+		},
+		"contracts/Distribution/USDRetriever.sol": {
+			"keccak256": "0xf8ce825a5e793fc484345dc3f0a6740a30789f5350e78e88ec8299a37b5f6e29",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://122a6aef4b850696c924cf998ce6aef26bca2d9816231d6b02059fc9c7712cc4",
+				"dweb:/ipfs/QmYFGPboP1XgCmRMJy64396RVTYubY3ckaLitAZx7PG6u2"
+			]
+		},
+		"contracts/Distribution/WrappedTokenDistributorUpgradeable.sol": {
+			"keccak256": "0xd7e60cfdab6b448bf1119bd8f7a320db4ef747d1e0e1d81c5c74795de00870f6",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://5fe48b733df2db70ccd193e6f10820b63dce42d17c22df2e0578aefa39b6c2a7",
+				"dweb:/ipfs/Qmc3uccLiVkeKJjWyp94BjoCc2UH7RLUNCFbJqiiE4QmME"
+			]
+		},
+		"contracts/Role/PoolCreator.sol": {
+			"keccak256": "0x3a1c02c53655e8abba09bc0171193bf0d90c7259693007b326aea97efb17a307",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://de8210972cac00dc35d6749403dc080e2338a3e9eae423e16e7c12caab322835",
+				"dweb:/ipfs/QmcX1HUJxmDknGqnZ3u43x4ZbJxv5bX1TgrcV9f6eU4Q5b"
+			]
+		},
+		"contracts/Role/Roles.sol": {
+			"keccak256": "0x879ee5db8347ae0143ae7f8fec48b8f338cc1c09086c5091d5ade04606602e9a",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://74697023a82a5219bbcd21003a8b7784ccc9dc439ae9bbc32750a0699036c0fc",
+				"dweb:/ipfs/QmcSvo2fKGiCEVqFYZVmqwthW1Y2zk3BNFg795A3Sswww8"
+			]
+		},
+		"contracts/Staking/StakingPoolFactory.sol": {
+			"keccak256": "0x79387dd6ed276a32c1642af7f36c1a1e68d922f1a20483335ac9aaf6e6b19a73",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://7441498db7e211c7cf73c0ed37508b8193933bf9564d74e53f35ffa4724c3701",
+				"dweb:/ipfs/Qme2sNocmMBycpA7VEaFEZmbF3y4puLJ6bfPBiENJe7jFj"
+			]
+		},
+		"contracts/Staking/StakingPoolProxy.sol": {
+			"keccak256": "0x23474c93084edca2f3540f33955219e52076aace88e93bfcb09c538634f463e7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://992129ba809d02e41ad8a967692b967c9290d6b1a095fb17c628b6cb4b1f5201",
+				"dweb:/ipfs/QmYsi3kGGkeymwgDmpvoycqmPp69Rksr8u4K4Da8grFe7H"
+			]
+		},
+		"contracts/Staking/StakingPoolStorageStructure.sol": {
+			"keccak256": "0xb212dbd7f62a57901d25830fa1c670cf07a27c7fbb83aaf9201517210a873cba",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://9ced9787f9fddfdafec499fbd71b909382e45cb5c069fcaa978cc1b3e1cbd1a8",
+				"dweb:/ipfs/QmSptA8Va4Gu1rot6PrWh433ucUknjUuimGjpQtryqmio7"
+			]
+		},
+		"contracts/interfaces/IPancakeRouter.sol": {
+			"keccak256": "0x40ff7201ca90e848ee6f006c4d114891619f28c21e713d74dc62b1ffc48d0461",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://e29ed10f9b951e92c73e02bb677a2db1be6d22f40cac319e5d0f7e823338479b",
+				"dweb:/ipfs/Qmd6VfW6PTtqYksJVFYBHFTpMRqFzBsz8DnmQNNJo9bGN4"
+			]
+		},
+		"contracts/interfaces/IRewardManager.sol": {
+			"keccak256": "0xab39a767c897abdfa93b0a33593cd3c179fd5222f2a37de798d298ccf66e5adb",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://98573392122a18e656e67b29fea9f1290edeaee0c0160917032efff9a99eac6f",
+				"dweb:/ipfs/QmagmjBjpzVzpPtCJ8hEeXgf2i2YnuPJJvP8DEVKhHgLoq"
+			]
+		},
+		"contracts/interfaces/ITotemToken.sol": {
+			"keccak256": "0x1ba963229ac039a0550990884eb976a06fb2fe7691848ff27af1c14574346531",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://c25962a3ab889829d2920ade5fc042bfc4651cf5470f154fc608eac9739a0390",
+				"dweb:/ipfs/QmRzS2RUe6wpLho8AT7BD8eyJkZzUNaJZE3B7Jna6U56BX"
+			]
+		},
+		"contracts/libraries/BasisPoints.sol": {
+			"keccak256": "0xcbe25ead953d92501d8fc100fbc9d1c5d3885b6360b3619309063fdd3b874a31",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://24cf8d074460ad1d6367d16d0b1be9f2717e2bdd56585814d2dd73cbe43f7926",
+				"dweb:/ipfs/QmckMwCnivxmxvbpUk5GVzvHAdJnQQCbgjG7UYHW1vg8zT"
+			]
+		},
+		"contracts/libraries/CalculateRewardLib.sol": {
+			"keccak256": "0xc712e3d29c87edcd36233abc68310220ad0914694200663dded7328044638e8b",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://50aa6bc2352b306f218232478855140ff442eb23d7a1b512f05bdb4eed99fe5d",
+				"dweb:/ipfs/QmTbj4N8mndignbZswnQUkC8zLGmhdmcvSX5GmQGe7MKZU"
+			]
+		},
+		"contracts/libraries/ClaimRewardLib.sol": {
+			"keccak256": "0xec7d4e480f58753b28aa26b3a2e588c256303039bbeeac3e241ee803af5121a4",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://fffda15d83c38aa83086cf8bcdb0865ba1e10368d153069d1a134be9e8fe3453",
+				"dweb:/ipfs/QmevXbxTfHhfParW4w5UPLwgGRTgjH2j97DwvbCmm7Wcew"
+			]
+		},
+		"contracts/libraries/IndexedClaimRewardLib.sol": {
+			"keccak256": "0xbc6ba78bfd18f5ed2e8b635f25eb3934e224a6ccea017141f9354ba2112e6db8",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://cf28928dda98e4e2a384fb4c6fbe6a0cb3837bb879e62d221e09394ff869b654",
+				"dweb:/ipfs/QmZ7v19GtpfPRcnF5pbgFraBwiA29LmhitM8C7dC2WXwsg"
+			]
+		},
+		"contracts/libraries/PriceConsumer.sol": {
+			"keccak256": "0x41fcb8614f7d7edd7717758ae0c24ea928d12bd950efe7e1fdf43e75950b4d60",
+			"license": "UNLICENSED",
+			"urls": [
+				"bzz-raw://2f7c561346190e41cc79bdf1b38b9aed1dc961f4f6dd851391d6bccd25e8ac54",
+				"dweb:/ipfs/QmagHmuQWKntsQdUx8Fvbi5RjhqZUV8pMKo3Xc2AVwhofA"
+			]
+		}
+	},
+	"version": 1
+}
